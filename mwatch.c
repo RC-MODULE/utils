@@ -205,6 +205,7 @@ int main (int argc, char *argv[])
   int start_now = 0;
   gchar* demuxdev = NULL;
   int outmode = 2;
+  int nodstrect = 0;
 
   do
   {
@@ -213,6 +214,8 @@ int main (int argc, char *argv[])
     GOptionEntry options[] = {
       {"outmode", 'o', 0, G_OPTION_ARG_INT, &outmode,
         ("Output video mode (1-12). Default is 2. See `gst-inspect mvdusink' for details"), NULL},
+      {"nodstrect", 'R', 0, G_OPTION_ARG_INT, &nodstrect,
+        ("Set to 1 to skip passing dstrect=\"1920x1080+0+0\" argument to mvdusink"), NULL},
       {"demuxdev", 'd', 0, G_OPTION_ARG_FILENAME, &demuxdev,
         ("Path to demux device. See `gst-inspect mdemuxsrc' for details"), NULL},
       {NULL}
@@ -297,11 +300,19 @@ int main (int argc, char *argv[])
     "max-size-time", 0ULL, 
     NULL);
 
-  g_object_set (G_OBJECT (pip->mvdusink), 
-    "outmode", outmode, 
-    "dstrect", "1920x1080+0+0", 
-    "sync", 1, 
-    NULL);
+  if(nodstrect == 1) {
+    g_object_set (G_OBJECT (pip->mvdusink), 
+      "outmode", outmode, 
+      "sync", 1, 
+      NULL);
+  }
+  else {
+    g_object_set (G_OBJECT (pip->mvdusink), 
+      "outmode", outmode, 
+      "dstrect", "1920x1080+0+0", 
+      "sync", 1, 
+      NULL);
+  }
 
   g_object_set (G_OBJECT (pip->msvdhddec), 
     "frameskip", 2, 
