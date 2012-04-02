@@ -11,6 +11,7 @@
 #include <stdint.h>
 #include <exception>
 #include <stdexcept>
+#include <sstream>
 #include <map>
 
 #define T_SB                0x80  // sb                           primitive   h<--m
@@ -23,6 +24,8 @@
 #define T_NEW_T_C           0x87  // new tc / reply to t_request  primitive   h-->m
 #define T_T_C_ERROR         0x77  // error creating tc            primitive   h-->m
 #define T_DATA_LAST					0xA0
+
+bool g_debug = true;
 
 static const uint32_t RSRCID_RESOURCE_MANAGER = 0x10041;
 
@@ -314,13 +317,15 @@ struct Connection {
 			perror("read");
 			exit(1);
 		}
-/*
-		fprintf(stderr, "connection read:");
-		for(int i = 0; i < l; ++i) {
-			fprintf(stderr, " %02X", rdata_[i]);
+
+		if(g_debug) {
+			fprintf(stderr, "connection read:");
+			for(int i = 0; i < l; ++i) {
+				fprintf(stderr, " %02X", rdata_[i]);
+			}
+			fprintf(stderr, "\n");
 		}
-		fprintf(stderr, "\n");
-*/
+
 		const uint8_t* r = rdata_ + 2;
 		TRPDU trpdu = parse_trpdu(r, r + l - 2);
 
@@ -365,12 +370,12 @@ private:
 		memmove(p, plen, w-plen);
 		p+= w - plen;
 	
-/*
-		fprintf(stderr, "tpdu:");
-		for(size_t i =0; i != (p - header); ++i)
-			fprintf(stderr, " %02X", header[i]);
-		fprintf(stderr, "\n");
-*/
+		if(g_debug) {
+			fprintf(stderr, "tpdu:");
+			for(size_t i =0; i != (p - header); ++i)
+				fprintf(stderr, " %02X", header[i]);
+			fprintf(stderr, "\n");
+		}
 
 		if(write(g_fd, header, p - header) < 0) {
 			perror("write");
@@ -608,19 +613,22 @@ private:
 				s = start_spdu();
 				open_session_response(s, 0, RSRCID_RESOURCE_MANAGER, next_session_);
 				end_spdu(s);
-				((ResourceManager*)(sessions_[next_session_] = new ResourceManager(this, next_session_++)))->profile_enq();
+				((ResourceManager*)(sessions_[next_session_] = new ResourceManager(this, next_session_)))->profile_enq();
+				++next_session_;
 				break;
 			case 0x20041:
 				s = start_spdu();
         open_session_response(s, 0, 0x20041, next_session_);
         end_spdu(s);
-				((ApplicationManager*)(sessions_[next_session_] = new ApplicationManager(this, next_session_++)))->application_enq();
+				((ApplicationManager*)(sessions_[next_session_] = new ApplicationManager(this, next_session_)))->application_enq();
+				++next_session_;
 				break;
 			case 0x30041:
 				s = start_spdu();
 				open_session_response(s, 0, 0x30041, next_session_);
         end_spdu(s);
-				((CAManager*)(sessions_[next_session_] = new CAManager(this, next_session_++)))->ca_info_enq();
+				((CAManager*)(sessions_[next_session_] = new CAManager(this, next_session_)))->ca_info_enq();
+				++next_session_;
 				break;
 			default:
 				s = start_spdu();
@@ -633,8 +641,11 @@ private:
 			std::map<uint16_t, Session*>::iterator i = sessions_.find(spdu.session_number_.nb_);
 			if(i != sessions_.end())
 				i->second->on_apdu(spdu.session_number_.apdu_, spdu.session_number_.len_);
-			else
-				throw std::runtime_error("on_sdpu: nonexistent session number");
+			else {
+				std::ostringstream err;
+				err << "on_sdpu: nonexistent session number " << spdu.session_number_.nb_;
+				throw std::runtime_error(err.str());
+			}
 			break;}
 		default:
 			break;
