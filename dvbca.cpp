@@ -606,6 +606,7 @@ private:
 		SPDU spdu = parse_spdu(b, b+n);
 		
 		uint8_t* s = 0;
+		int sn = next_session_;
 		switch(spdu.tag_) {
 		case STAG_OPEN_SESSION_REQUEST:
 			switch(spdu.open_session_request_.resource_) {	
@@ -613,22 +614,22 @@ private:
 				s = start_spdu();
 				open_session_response(s, 0, RSRCID_RESOURCE_MANAGER, next_session_);
 				end_spdu(s);
-				((ResourceManager*)(sessions_[next_session_] = new ResourceManager(this, next_session_)))->profile_enq();
-				++next_session_;
+				sn = next_session_++;
+				((ResourceManager*)(sessions_[sn] = new ResourceManager(this, sn)))->profile_enq();
 				break;
 			case 0x20041:
 				s = start_spdu();
         open_session_response(s, 0, 0x20041, next_session_);
         end_spdu(s);
-				((ApplicationManager*)(sessions_[next_session_] = new ApplicationManager(this, next_session_)))->application_enq();
-				++next_session_;
+				sn = next_session_++;
+				((ApplicationManager*)(sessions_[sn] = new ApplicationManager(this, sn)))->application_enq();
 				break;
 			case 0x30041:
 				s = start_spdu();
 				open_session_response(s, 0, 0x30041, next_session_);
         end_spdu(s);
-				((CAManager*)(sessions_[next_session_] = new CAManager(this, next_session_)))->ca_info_enq();
-				++next_session_;
+				sn = next_session_++;
+				((CAManager*)(sessions_[sn] = new CAManager(this, sn)))->ca_info_enq();
 				break;
 			default:
 				s = start_spdu();
