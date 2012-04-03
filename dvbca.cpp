@@ -689,7 +689,7 @@ int main(int argc, char* argv[]) {
 	s.create_t_c();
 
 	int demux = open(argv[1], O_RDWR);
-	if(-1 == demux) {
+	if(demux < 0) {
 		perror("open demux");
 		exit(1);
 	}
