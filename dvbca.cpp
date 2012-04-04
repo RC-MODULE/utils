@@ -25,7 +25,7 @@
 #define T_T_C_ERROR         0x77  // error creating tc            primitive   h-->m
 #define T_DATA_LAST					0xA0
 
-bool g_debug = true;
+bool g_debug = false;
 
 static const uint32_t RSRCID_RESOURCE_MANAGER = 0x10041;
 
