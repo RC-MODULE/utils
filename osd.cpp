@@ -1,4 +1,6 @@
+#define this __this
 #include <linux/module_vdu.h>
+#undef this
 #include <fcntl.h>
 #include <sys/ioctl.h>
 #include <stdio.h>
