@@ -1,0 +1,129 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.5.4	//
+BUNCH	i2cbusses.c	112;"	d	file:
+I2C_FUNCS	linux/i2c-dev.h	135;"	d
+I2C_FUNC_10BIT_ADDR	linux/i2c-dev.h	54;"	d
+I2C_FUNC_I2C	linux/i2c-dev.h	53;"	d
+I2C_FUNC_PROTOCOL_MANGLING	linux/i2c-dev.h	55;"	d
+I2C_FUNC_SMBUS_BLOCK_DATA	linux/i2c-dev.h	77;"	d
+I2C_FUNC_SMBUS_BLOCK_PROC_CALL	linux/i2c-dev.h	57;"	d
+I2C_FUNC_SMBUS_BYTE	linux/i2c-dev.h	71;"	d
+I2C_FUNC_SMBUS_BYTE_DATA	linux/i2c-dev.h	73;"	d
+I2C_FUNC_SMBUS_HWPEC_CALC	linux/i2c-dev.h	83;"	d
+I2C_FUNC_SMBUS_I2C_BLOCK	linux/i2c-dev.h	79;"	d
+I2C_FUNC_SMBUS_PEC	linux/i2c-dev.h	56;"	d
+I2C_FUNC_SMBUS_PROC_CALL	linux/i2c-dev.h	65;"	d
+I2C_FUNC_SMBUS_QUICK	linux/i2c-dev.h	58;"	d
+I2C_FUNC_SMBUS_READ_BLOCK_DATA	linux/i2c-dev.h	66;"	d
+I2C_FUNC_SMBUS_READ_BYTE	linux/i2c-dev.h	59;"	d
+I2C_FUNC_SMBUS_READ_BYTE_DATA	linux/i2c-dev.h	61;"	d
+I2C_FUNC_SMBUS_READ_I2C_BLOCK	linux/i2c-dev.h	68;"	d
+I2C_FUNC_SMBUS_READ_WORD_DATA	linux/i2c-dev.h	63;"	d
+I2C_FUNC_SMBUS_WORD_DATA	linux/i2c-dev.h	75;"	d
+I2C_FUNC_SMBUS_WRITE_BLOCK_DATA	linux/i2c-dev.h	67;"	d
+I2C_FUNC_SMBUS_WRITE_BYTE	linux/i2c-dev.h	60;"	d
+I2C_FUNC_SMBUS_WRITE_BYTE_DATA	linux/i2c-dev.h	62;"	d
+I2C_FUNC_SMBUS_WRITE_I2C_BLOCK	linux/i2c-dev.h	69;"	d
+I2C_FUNC_SMBUS_WRITE_WORD_DATA	linux/i2c-dev.h	64;"	d
+I2C_M_IGNORE_NAK	linux/i2c-dev.h	45;"	d
+I2C_M_NOSTART	linux/i2c-dev.h	43;"	d
+I2C_M_NO_RD_ACK	linux/i2c-dev.h	46;"	d
+I2C_M_RD	linux/i2c-dev.h	42;"	d
+I2C_M_REV_DIR_ADDR	linux/i2c-dev.h	44;"	d
+I2C_M_TEN	linux/i2c-dev.h	41;"	d
+I2C_PEC	linux/i2c-dev.h	137;"	d
+I2C_RDWR	linux/i2c-dev.h	136;"	d
+I2C_RETRIES	linux/i2c-dev.h	120;"	d
+I2C_SLAVE	linux/i2c-dev.h	127;"	d
+I2C_SLAVE_FORCE	linux/i2c-dev.h	129;"	d
+I2C_SMBUS	linux/i2c-dev.h	139;"	d
+I2C_SMBUS_BLOCK_DATA	linux/i2c-dev.h	108;"	d
+I2C_SMBUS_BLOCK_MAX	linux/i2c-dev.h	88;"	d
+I2C_SMBUS_BLOCK_PROC_CALL	linux/i2c-dev.h	110;"	d
+I2C_SMBUS_BYTE	linux/i2c-dev.h	104;"	d
+I2C_SMBUS_BYTE_DATA	linux/i2c-dev.h	105;"	d
+I2C_SMBUS_I2C_BLOCK_BROKEN	linux/i2c-dev.h	109;"	d
+I2C_SMBUS_I2C_BLOCK_DATA	linux/i2c-dev.h	111;"	d
+I2C_SMBUS_I2C_BLOCK_MAX	linux/i2c-dev.h	89;"	d
+I2C_SMBUS_PROC_CALL	linux/i2c-dev.h	107;"	d
+I2C_SMBUS_QUICK	linux/i2c-dev.h	103;"	d
+I2C_SMBUS_READ	linux/i2c-dev.h	98;"	d
+I2C_SMBUS_WORD_DATA	linux/i2c-dev.h	106;"	d
+I2C_SMBUS_WRITE	linux/i2c-dev.h	99;"	d
+I2C_TENBIT	linux/i2c-dev.h	133;"	d
+I2C_TIMEOUT	linux/i2c-dev.h	123;"	d
+LIB_I2CDEV_H	linux/i2c-dev.h	26;"	d
+MISSING_FUNC_FMT	i2cbusses.h	40;"	d
+VERSION	version.h	1;"	d
+_BSD_SOURCE	i2cbusses.c	26;"	d	file:
+_I2CBUSSES_H	i2cbusses.h	23;"	d
+_UTIL_H	util.h	22;"	d
+adap_type	i2cbusses.c	/^struct adap_type {$/;"	s	file:
+adap_types	i2cbusses.c	/^static struct adap_type adap_types[5] = {$/;"	v	file:
+addr	linux/i2c-dev.h	/^	__u16 addr;	\/* slave address			*\/$/;"	m	struct:i2c_msg
+adt	i2cbusses.c	/^enum adt { adt_dummy, adt_isa, adt_i2c, adt_smbus, adt_unknown };$/;"	g	file:
+adt_dummy	i2cbusses.c	/^enum adt { adt_dummy, adt_isa, adt_i2c, adt_smbus, adt_unknown };$/;"	e	enum:adt	file:
+adt_i2c	i2cbusses.c	/^enum adt { adt_dummy, adt_isa, adt_i2c, adt_smbus, adt_unknown };$/;"	e	enum:adt	file:
+adt_isa	i2cbusses.c	/^enum adt { adt_dummy, adt_isa, adt_i2c, adt_smbus, adt_unknown };$/;"	e	enum:adt	file:
+adt_smbus	i2cbusses.c	/^enum adt { adt_dummy, adt_isa, adt_i2c, adt_smbus, adt_unknown };$/;"	e	enum:adt	file:
+adt_unknown	i2cbusses.c	/^enum adt { adt_dummy, adt_isa, adt_i2c, adt_smbus, adt_unknown };$/;"	e	enum:adt	file:
+algo	i2cbusses.c	/^	const char* algo;$/;"	m	struct:adap_type	file:
+algo	i2cbusses.h	/^	const char *algo;$/;"	m	struct:i2c_adap
+block	linux/i2c-dev.h	/^	__u8 block[I2C_SMBUS_BLOCK_MAX + 2]; \/* block[0] is used for length *\/$/;"	m	union:i2c_smbus_data
+buf	linux/i2c-dev.h	/^	char *buf;		\/* pointer to msg data			*\/$/;"	m	struct:i2c_msg
+byte	linux/i2c-dev.h	/^	__u8 byte;$/;"	m	union:i2c_smbus_data
+check_funcs	i2cget.c	/^static int check_funcs(int file, int size, int daddress, int pec)$/;"	f	file:
+check_funcs	i2cset.c	/^static int check_funcs(int file, int size, int pec)$/;"	f	file:
+command	linux/i2c-dev.h	/^	__u8 command;$/;"	m	struct:i2c_smbus_ioctl_data
+confirm	i2cget.c	/^static int confirm(const char *filename, int address, int size, int daddress,$/;"	f	file:
+confirm	i2cset.c	/^static int confirm(const char *filename, int address, int size, int daddress,$/;"	f	file:
+data	linux/i2c-dev.h	/^	union i2c_smbus_data *data;$/;"	m	struct:i2c_smbus_ioctl_data
+flags	linux/i2c-dev.h	/^	unsigned short flags;		$/;"	m	struct:i2c_msg
+free_adapters	i2cbusses.c	/^void free_adapters(struct i2c_adap *adapters)$/;"	f
+funcs	i2cbusses.c	/^	const char *funcs;$/;"	m	struct:adap_type	file:
+funcs	i2cbusses.h	/^	const char *funcs;$/;"	m	struct:i2c_adap
+gather_i2c_busses	i2cbusses.c	/^struct i2c_adap *gather_i2c_busses(void)$/;"	f
+help	i2cget.c	/^static void help(void)$/;"	f	file:
+help	i2cset.c	/^static void help(void)$/;"	f	file:
+i2c_adap	i2cbusses.h	/^struct i2c_adap {$/;"	s
+i2c_get_funcs	i2cbusses.c	/^static enum adt i2c_get_funcs(int i2cbus)$/;"	f	file:
+i2c_msg	linux/i2c-dev.h	/^struct i2c_msg {$/;"	s
+i2c_rdwr_ioctl_data	linux/i2c-dev.h	/^struct i2c_rdwr_ioctl_data {$/;"	s
+i2c_smbus_access	linux/i2c-dev.h	/^static inline __s32 i2c_smbus_access(int file, char read_write, __u8 command, $/;"	f
+i2c_smbus_block_process_call	linux/i2c-dev.h	/^static inline __s32 i2c_smbus_block_process_call(int file, __u8 command,$/;"	f
+i2c_smbus_data	linux/i2c-dev.h	/^union i2c_smbus_data {$/;"	u
+i2c_smbus_ioctl_data	linux/i2c-dev.h	/^struct i2c_smbus_ioctl_data {$/;"	s
+i2c_smbus_process_call	linux/i2c-dev.h	/^static inline __s32 i2c_smbus_process_call(int file, __u8 command, __u16 value)$/;"	f
+i2c_smbus_read_block_data	linux/i2c-dev.h	/^static inline __s32 i2c_smbus_read_block_data(int file, __u8 command, $/;"	f
+i2c_smbus_read_byte	linux/i2c-dev.h	/^static inline __s32 i2c_smbus_read_byte(int file)$/;"	f
+i2c_smbus_read_byte_data	linux/i2c-dev.h	/^static inline __s32 i2c_smbus_read_byte_data(int file, __u8 command)$/;"	f
+i2c_smbus_read_i2c_block_data	linux/i2c-dev.h	/^static inline __s32 i2c_smbus_read_i2c_block_data(int file, __u8 command,$/;"	f
+i2c_smbus_read_word_data	linux/i2c-dev.h	/^static inline __s32 i2c_smbus_read_word_data(int file, __u8 command)$/;"	f
+i2c_smbus_write_block_data	linux/i2c-dev.h	/^static inline __s32 i2c_smbus_write_block_data(int file, __u8 command, $/;"	f
+i2c_smbus_write_byte	linux/i2c-dev.h	/^static inline __s32 i2c_smbus_write_byte(int file, __u8 value)$/;"	f
+i2c_smbus_write_byte_data	linux/i2c-dev.h	/^static inline __s32 i2c_smbus_write_byte_data(int file, __u8 command, $/;"	f
+i2c_smbus_write_i2c_block_data	linux/i2c-dev.h	/^static inline __s32 i2c_smbus_write_i2c_block_data(int file, __u8 command,$/;"	f
+i2c_smbus_write_quick	linux/i2c-dev.h	/^static inline __s32 i2c_smbus_write_quick(int file, __u8 value)$/;"	f
+i2c_smbus_write_word_data	linux/i2c-dev.h	/^static inline __s32 i2c_smbus_write_word_data(int file, __u8 command, $/;"	f
+len	linux/i2c-dev.h	/^	short len;		\/* msg length				*\/$/;"	m	struct:i2c_msg
+lookup_i2c_bus	i2cbusses.c	/^int lookup_i2c_bus(const char *i2cbus_arg)$/;"	f
+lookup_i2c_bus_by_name	i2cbusses.c	/^static int lookup_i2c_bus_by_name(const char *bus_name)$/;"	f	file:
+main	i2cget.c	/^int main(int argc, char *argv[])$/;"	f
+main	i2cset.c	/^int main(int argc, char *argv[])$/;"	f
+more_adapters	i2cbusses.c	/^static struct i2c_adap *more_adapters(struct i2c_adap *adapters, int n)$/;"	f	file:
+msgs	linux/i2c-dev.h	/^	struct i2c_msg *msgs;	\/* pointers to i2c_msgs *\/$/;"	m	struct:i2c_rdwr_ioctl_data
+name	i2cbusses.h	/^	char *name;$/;"	m	struct:i2c_adap
+nmsgs	linux/i2c-dev.h	/^	int nmsgs;		\/* number of i2c_msgs *\/$/;"	m	struct:i2c_rdwr_ioctl_data
+nr	i2cbusses.h	/^	int nr;$/;"	m	struct:i2c_adap
+open_i2c_dev	i2cbusses.c	/^int open_i2c_dev(const int i2cbus, char *filename, const int quiet)$/;"	f
+parse_i2c_address	i2cbusses.c	/^int parse_i2c_address(const char *address_arg)$/;"	f
+read_write	linux/i2c-dev.h	/^	char read_write;$/;"	m	struct:i2c_smbus_ioctl_data
+rtrim	i2cbusses.c	/^static int rtrim(char *s)$/;"	f	file:
+set_slave_addr	i2cbusses.c	/^int set_slave_addr(int file, int address, int force)$/;"	f
+size	linux/i2c-dev.h	/^	int size;$/;"	m	struct:i2c_smbus_ioctl_data
+user_ack	util.c	/^int user_ack(int def)$/;"	f
+word	linux/i2c-dev.h	/^	__u16 word;$/;"	m	union:i2c_smbus_data
