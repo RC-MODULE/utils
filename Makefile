@@ -29,6 +29,6 @@ i2cget: i2c/*
 	$(CC) -Ii2c i2c/i2cget.c i2c/i2cbusses.c i2c/util.c -o i2cget
 
 i2cset: i2c/*
-	$(CC) -Ii2c i2c/i2cget.c i2c/i2cbusses.c i2c/util.c -o i2cset
+	$(CC) -Ii2c i2c/i2cset.c i2c/i2cbusses.c i2c/util.c -o i2cset
 
 .PHONY: all clean
