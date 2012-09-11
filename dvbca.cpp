@@ -553,14 +553,14 @@ struct CAManager : Session {
 			size_t ca_eslen = 0;
 			for(size_t i = 0; i < eslen && (i < eslen - 1);) {
         if(0x09 == pmt[i]) 
-          ca_eslen += pmt[i+1];
+          ca_eslen += pmt[i+1] + 2;
         i += 1+pmt[i+1];
       }
 
-			write_uint16(a, ca_eslen);
-
 			if(ca_eslen) {
-        for(size_t i = 0; i < eslen-1;) {
+				write_uint16(a, ca_eslen + 1);
+        *a++ = 0x01;
+				for(size_t i = 0; i < eslen-1;) {
 					if(0x09 == pmt[i]) {
             *a++ = 0x09;
             *a++ = pmt[i+1];
@@ -570,6 +570,9 @@ struct CAManager : Session {
           i += pmt[i+1];
         }
       }
+			else
+				write_uint16(a, 0);
+
 			pmt += eslen;
 		}
 
