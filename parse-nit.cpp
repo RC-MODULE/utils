@@ -132,6 +132,29 @@ int main(int argc, char* argv[]) {
 						<< ",\"symbol_rate\":" << (symbol_rate >> 4) << ",\"FEC_inner\":" << (symbol_rate & 15) 
 						<< std::dec << "}";
 				}
+				else if(tag == 0x5a) { // terrestrial_delivery_system_descriptor
+					uint32_t centre_frequency;
+					uint8_t bandwidth;
+					uint8_t constellation__hierarchy_information__code_rate_HP_stream;
+					uint8_t code_rate_LP_stream__guard_interval__transmission_mode__other_frequency_flag;
+
+					std::cin >> read(centre_frequency) >> read(bandwidth) 
+						>> read(constellation__hierarchy_information__code_rate_HP_stream)
+						>> read(code_rate_LP_stream__guard_interval__transmission_mode__other_frequency_flag);
+				
+					std::cin.ignore(4);
+
+					std::cout << "{\"tag\":" << (uint32_t)tag 
+						<< ",\"centre_frequency\":" << centre_frequency << std::dec << ",\"bandwith\":" << (bandwidth >> 5) 
+						<< ",\"constelation\":" << (constellation__hierarchy_information__code_rate_HP_stream >> 6)
+						<< ",\"hierarchy_information\":" << ((constellation__hierarchy_information__code_rate_HP_stream >> 3) & 7)
+						<< ",\"code_rate-HP_stream\":" << (constellation__hierarchy_information__code_rate_HP_stream & 7)
+						<< ",\"code_rate-LP_stream\":" << (code_rate_LP_stream__guard_interval__transmission_mode__other_frequency_flag >> 5)
+						<< ",\"guard_interval\":" << ((code_rate_LP_stream__guard_interval__transmission_mode__other_frequency_flag >> 3) & 7)
+						<< ",\"transmission_mode\":" << ((code_rate_LP_stream__guard_interval__transmission_mode__other_frequency_flag >> 1) & 3)
+						<< ",\"other_frequency_frequency_flag\":" << (code_rate_LP_stream__guard_interval__transmission_mode__other_frequency_flag & 1)
+						<< "}";
+				}
 				else {
 					std::cin.ignore(length);
 					std::cout << "{\"tag\":" << (uint32_t)tag << "}";	
