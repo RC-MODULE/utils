@@ -2,7 +2,7 @@ CC=$(GNU_TARGET_NAME)-gcc
 CXX=$(GNU_TARGET_NAME)-g++
 PKG_CONFIG=$(GNU_TARGET_NAME)-pkg-config
 
-targets = tuneqpsk ts-save-1 sec-filter parse-pmt parse-pat parse-nit parse-sdt parse-eit dvbca mwatch 5909 osd i2cget i2cset
+targets = tuneqpsk pessave tstap ts-save-1 sec-filter parse-pmt parse-pat parse-nit parse-sdt parse-eit dvbca mwatch 5909 osd i2cget i2cset
 
 all: $(targets)
 
